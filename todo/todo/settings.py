@@ -136,8 +136,8 @@ LOGIN_URL = "user_login"
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 
-import dj_database_url 
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
+#import dj_database_url 
+#prod_db  =  dj_database_url.config(conn_max_age=500)
+#DATABASES['default'].update(prod_db)
 
-ALLOWED_HOSTS = ['https://todo-box.herokuapp.com', 'https://git.heroku.com/todo-box.git']
+#ALLOWED_HOSTS = ['https://todo-box.herokuapp.com', 'https://git.heroku.com/todo-box.git']
