@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>
+        About Page
+    </title>
+{% endblock %}
+
+{% block content %}
+    {% include 'todo_list/nav_bar.html' %}
+    </nav>
+    </br>
+    <h1 class="display-4" align="center" >Hello There</h1>
+    <h3 align="center">About us</h3>
+    <div class="container rounded-lg p-3 my-3 bg-dark text-white" align="center" style="padding-top: 20px;">
+        <p>We provides you a very organized Task Manager <strong>TODO-BOX</strong> to save your works of your daily routine<br/>
+            You can Add new tasks, Update your tasks, Delete your tasks.<br/>
+            If your work is done you can Mark it as done or if it seems that the work is not done yet you can mark it as undone.<br/>
+            Make your TODO-BOX use our powerful tools, take advantage of our hard work, and <strong>Be More Productive</strong> 
+        </p>
+        <p>
+            To know more about us visite the developer's website and stay connected.<br/><br/>
+            <a class="btn btn-primary" href="https://sandipandas898.wixsite.com/sandipandas">Developer's Website</a>
+        </p>
+    </div>
+    {% include 'todo_list/footer.html' %}
+{% endblock %}

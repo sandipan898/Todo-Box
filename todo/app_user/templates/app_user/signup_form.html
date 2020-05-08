@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+	Signup
+{% endblock %}
+
+{% block content %}
+	{%include 'todo_list/nav_bar.html'%}
+	</nav>
+	<br/>
+	<form role="form" action="{% url 'welcome' %}" method="POST">
+		{% csrf_token %}
+
+		<h2>Please fill in the form below to create a new account</h2>
+		{{form | crispy}}
+
+		<button type="submit" class="btn btn-primary active btn-success">Sign Up</button>
+	</form>
+{% endblock %}

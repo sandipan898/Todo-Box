@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>
+        Contact Page
+    </title>
+{% endblock %}
+
+{% block content %}    
+    {% include 'todo_list/nav_bar.html' %}  
+    </nav>
+    </br>
+    <h1 class="display-4" align="center" >Hello There</h1>
+    <h3 align="center">Have more Queries? Contact Us</h3>
+    <div class="container rounded-lg p-3 my-3 bg-dark text-white" align="center" style="padding-top: 20px;">
+        <p>Send Email here</p>
+        {% for i in emails %}
+        <p class="bg-success rounded-lg" style="width: 300px;">{{i}}</p>
+        {% endfor %}
+        <p>
+            To know more about us visite the developer's website and stay connected.<br/><br/>
+            <a class="btn btn-primary" href="https://sandipandas898.wixsite.com/sandipandas" target="_blank">Developer's Website</a>
+        </p>
+    </div>
+    {% include 'todo_list/footer.html' %}
+{% endblock %}

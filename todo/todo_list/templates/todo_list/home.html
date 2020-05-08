@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Home
+{% endblock %}
+
+{% block content %}
+
+    {% include 'todo_list/nav_bar.html' %}
+        <form class="form-inline my-2 my-lg-0" method="POST">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="search" placeholder="Add Item" aria-label="Search" name="item">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add to your list</button>
+        </form>
+    </nav>
+    <br/>
+    {% if messages %}
+        {% for msg in messages %}
+            <div class="alert alert-warning alart-dismissable" role="alert">
+                <button class="close" data-dismiss="alert">
+                    <small><sup>x</sup></small>
+                </button>
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+    {% if objects %}
+        <table class="table table-dark table-bordered">
+        <tr>
+            <th><center>Work Title</center></th>
+            <th><center>Time Added</center></th>
+            <th><center>Status</center><th>
+        </tr>
+        {% for obj in objects %}
+            {% if obj.completed %}
+                <tr class="">
+                    <td class="striker"><a class="btn bbtn btn-secondary btn-block" href="{% url 'update' obj.id%}">{{obj.item}}</a></td>
+                    <td><center>{{obj.time_added}}</center></td>
+                    <td>
+                        <center><a class="btn btn-primary btn-sm" href="{% url 'mark_undone' obj.id %}">Undone</a></center>
+                    </td>
+                    <td><center><a class="btn btn-primary btn-sm" href="{% url 'delete' obj.id %}">DELETE</a></center></td> 
+                </tr>
+            {% else %}
+                <tr>
+                    <td><a class="btn bbtn btn-secondary btn-block" href="{% url 'update' obj.id%}">{{obj.item}}</a></td>
+                    <td><center>{{obj.time_added}}</center></td>
+                    <td>
+                        <center><a class="btn btn-primary btn-sm" href="{% url 'mark_done' obj.id %}">Mark as Done</a></center>
+                    </td>
+                    <td><center><a class="btn btn-primary btn-sm" href="{% url 'delete' obj.id %}">DELETE</a></center></td> 
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </table>
+    {% endif %}
+
+{% endblock %}

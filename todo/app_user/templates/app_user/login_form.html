@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+	<title>Login</title>
+{% endblock %}
+
+{% block content %}
+    {% include 'todo_list/nav_bar.html' %}
+    </nav>
+    <br/>
+	<form role="form" action="{% url 'user_login' %}" method="post">
+		{% csrf_token %}
+		<p>Please Login</p>
+		
+		{{form | crispy}}
+
+		<button type="submit" class="btn btn-success">Sign in</button>
+	</form>
+
+{% endblock %}
