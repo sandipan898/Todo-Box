@@ -9,27 +9,34 @@ import requests
 @login_required
 def welcome_view(request):
     template_name = "todo_list/welcome.html"
-    no_of_items = List.objects.count()
-    no_of_incomplete_items = List.objects.filter(completed=False).count()
-    context = {'no_of_items': no_of_items, 'no_of_incomplete_items': no_of_incomplete_items}
+    #print(request.user, "me")
+    list_for_user = List.objects.filter(user=request.user)
+    no_of_items = list_for_user.count()
+    no_of_incomplete_items = list_for_user.filter(completed=False).count()
+    print(no_of_incomplete_items)
+    context = {'no_of_items': no_of_items, 'no_of_incomplete_items': no_of_incomplete_items, 'user': request.user}
     return render(request, template_name, context)
 
 @login_required
 def home_view(request):
-
     template_name = 'todo_list/home.html'
     context = {}
     if request.method == "POST":
         form = ListForm(request.POST or None)
-
         if form.is_valid():
-            form.save()
-            all_items = List.objects.all()
+            print(form.cleaned_data)
+            item = form.cleaned_data['item']
+            completed = form.cleaned_data['completed']
+            List.objects.create(user=request.user, item=item, completed=completed)
+            #form.save()
+            #list_for_user = List.objects.filter(user=request.user)
+            #print(request.user.list_set)
+            all_items = List.objects.filter(user=request.user).all()
             context['objects'] = all_items
             messages.success(request, ("It has been added to the list!"))
     
     else:
-        all_items = List.objects.all()
+        all_items = List.objects.filter(user=request.user).all()
         context['objects'] = all_items
     
     return render(request, template_name, context=context)

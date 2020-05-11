@@ -54,6 +54,12 @@
             {% endif %}
         {% endfor %}
         </table>
+
+    {% else %}
+        <div class="alert alert-warning alart-dismissable" align="center">
+            <p>Your Todo-List is empty right now... </p>
+            <p>Hurry up and feel your Todo-Box with all of your works!</p>
+        </div>
     {% endif %}
 
 {% endblock %}

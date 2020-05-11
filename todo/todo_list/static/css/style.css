@@ -2,3 +2,8 @@
     text-decoration: line-through;
 }
 
+body{
+    background-image: url(../images/bg_resized4.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

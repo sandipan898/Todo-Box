@@ -25,7 +25,7 @@ SECRET_KEY = 'q4qfsbvn$&(!uaet4z()y$sqw!)eb+sx)7_p_o)a)&9zcetku*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['a5cc9405.ngrok.io', '1c09f9ac.ngrok.io', 'eab8ba19.ngrok.io', '127.0.0.1', 'b3b2bd7f.ngrok.io']
 
 
 # Application definition
@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'todo_list',
     'app_user',
     'crispy_forms',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -126,18 +130,27 @@ USE_TZ = True
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = "welcome"
-LOGOUT_REDIRECT_URL = "user_login"
+LOGOUT_REDIRECT_URL = "user_home"
 LOGIN_URL = "user_login"
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+
+SITE_ID = 1
 #import dj_database_url 
 #prod_db  =  dj_database_url.config(conn_max_age=500)
 #DATABASES['default'].update(prod_db)
 
-#ALLOWED_HOSTS = ['https://todo-box.herokuapp.com', 'https://git.heroku.com/todo-box.git']
+#ALLOWED_HOSTS = ['https://todo-box.herokuapp.com', 'https://git.heroku.com/todo-box.git', 'fbf24d82.ngrok.io', '127.0.0.1']
