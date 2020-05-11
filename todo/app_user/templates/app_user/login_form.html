@@ -1,43 +1,22 @@
 {% extends "base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 
-{% block head %}
-	<title>Login</title>
+{% block title %}
+	Login
 {% endblock %}
 
 {% block content %}
     {% include 'todo_list/nav_bar.html' %}
     </nav>
 	<br/>
-	<!--
-	<form role="form" action="{% url 'user_login' %}" method="post">
-		{% csrf_token %}
-		<p>Please Login</p>
-		{{form | crispy}}
-
-		<button type="submit" class="btn btn-success">Sign in</button>
-	</form>
-	-->
 	<p class="h2" align='center'>Please enter correct username and password to Login</p>
-	<div class="container rounded-lg p-4 my-3 bg-dark text-white" align="center" style="width:700px;">
+	<div class="container rounded-lg p-4 my-3 bg-dark text-white" align="center" style="width:800px;">
 		<form role="form" action="{% url 'user_login' %}" method="POST">
 			{% csrf_token %}
-			<!--{{form| crispy}}-->
-			{% for field in form %}
-				<p style="padding-bottom:8px;">
-					{{ field.label_tag }}<br>
-					{{ field }}
-					{% if field.help_text %}
-						<small style="color: #9d9e9e">{{ field.help_text }}</small>
-					{% endif %}
-					{% for error in field.errors %}
-						<p class="danger">{{ error }}</p>
-					{% endfor %}
-				</p>
-			{% endfor %}
-
-			<button type="submit" class="btn btn-primary active">Sign in</button>
-		</form>
+			{{form| crispy}}
+			<button type="submit" class="btn btn-lg btn-primary active">Sign in</button>
+		</form> 
 	</div>
 
 {% endblock %}
