@@ -13,14 +13,14 @@
         <h1 class="display-4" align="center" >Welcome to TODO BOX</h1>
         <p class="h4" class="lead">Make your own TODO BOX.<br/><br/> Make your daily routine more organized. Transform yourself to beacome a more productive person.</p>
         <div class="container rounded-lg p-3 my-3 bg-dark text-white" align="center">
-            <p class="alert alert-danger">Seems like you are not logged in!</p>
+            <p class="alert alert-info">Seems like you are not logged in!</p>
             <p class="h6">
                 <span class="col-sm-4">New Here?</span>
                 <a class="btn btn-primary btn" href="{% url 'user_signup' %}">Create an Account</a><br/><br/>
                 <span class="col-sm-4">Have One?</span>
                 <a class="btn btn-primary btn" href="{% url 'user_login' %}">Login</a>
             </p>
-
         </div>
     </div>
+    
 {% endblock %}
