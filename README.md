@@ -12,3 +12,12 @@
    * Update Existing Tasks
    * Mark as Done
    * Undone any Task.
+
+## Technology used for the frontend
+  1. HTML5
+  2. CSS3
+  4. JavaScript
+  5. Bootstrap 4
+  
+## Technology used for the backend
+  1. Django
