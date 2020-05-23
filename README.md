@@ -14,10 +14,10 @@
    * Undone any Task.
 
 ### Technology used for the frontend
-  HTML5
-  CSS3
-  JavaScript
-  Bootstrap 4
+  1. HTML5
+  2. CSS3
+  3. JavaScript
+  4. Bootstrap 4
   
 ### Technology used for the backend
-  Django
+  1. Django
