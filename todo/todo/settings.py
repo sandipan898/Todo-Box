@@ -145,6 +145,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 >>>>>>> ./todo/todo/settings_REMOTE_6387.py
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
 
 LOGIN_REDIRECT_URL = "welcome"
 <<<<<<< ./todo/todo/settings_LOCAL_6387.py
