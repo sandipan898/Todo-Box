@@ -25,7 +25,13 @@ SECRET_KEY = 'q4qfsbvn$&(!uaet4z()y$sqw!)eb+sx)7_p_o)a)&9zcetku*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< ./todo/todo/settings_LOCAL_6387.py
 ALLOWED_HOSTS = ['127.0.0.1',]
+||||||| ./todo/todo/settings_BASE_6387.py
+ALLOWED_HOSTS = []
+=======
+ALLOWED_HOSTS = []
+>>>>>>> ./todo/todo/settings_REMOTE_6387.py
 
 
 # Application definition
@@ -130,23 +136,49 @@ USE_TZ = True
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
+<<<<<<< ./todo/todo/settings_LOCAL_6387.py
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+||||||| ./todo/todo/settings_BASE_6387.py
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+=======
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+>>>>>>> ./todo/todo/settings_REMOTE_6387.py
 
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = "welcome"
+<<<<<<< ./todo/todo/settings_LOCAL_6387.py
 LOGOUT_REDIRECT_URL = "user_home"
+||||||| ./todo/todo/settings_BASE_6387.py
+LOGOUT_REDIRECT_URL = "user_login"
+=======
+LOGOUT_REDIRECT_URL = "user_home"
+>>>>>>> ./todo/todo/settings_REMOTE_6387.py
 LOGIN_URL = "user_login"
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 
+<<<<<<< ./todo/todo/settings_LOCAL_6387.py
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 )
+||||||| ./todo/todo/settings_BASE_6387.py
+import dj_database_url 
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
+=======
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+>>>>>>> ./todo/todo/settings_REMOTE_6387.py
 
+<<<<<<< ./todo/todo/settings_LOCAL_6387.py
 
 SITE_ID = 1
 #import dj_database_url 
@@ -154,3 +186,12 @@ SITE_ID = 1
 #DATABASES['default'].update(prod_db)
 
 #ALLOWED_HOSTS = ['https://todo-box.herokuapp.com', 'https://git.heroku.com/todo-box.git', 'fbf24d82.ngrok.io', '127.0.0.1']
+||||||| ./todo/todo/settings_BASE_6387.py
+ALLOWED_HOSTS = ['https://todo-box.herokuapp.com', 'https://git.heroku.com/todo-box.git']
+=======
+
+SITE_ID = 1
+#import dj_database_url 
+#prod_db  =  dj_database_url.config(conn_max_age=500)
+#DATABASES['default'].update(prod_db)
+>>>>>>> ./todo/todo/settings_REMOTE_6387.py

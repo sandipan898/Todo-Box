@@ -1,11 +1,31 @@
+<<<<<<< ./todo/app_user/views_LOCAL_6387.py
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.urls import reverse_lazy, reverse
+||||||| ./todo/app_user/views_BASE_6387.py
+from django.shortcuts import render
+
+# Create your views here.
+from django.urls import reverse_lazy
+=======
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
+from django.urls import reverse_lazy, reverse
+>>>>>>> ./todo/app_user/views_REMOTE_6387.py
 from django.views.generic import CreateView
+<<<<<<< ./todo/app_user/views_LOCAL_6387.py
 from django.contrib.auth.forms import UserCreationForm
 from .forms import MySignUpForm
 from django.contrib.auth.models import User
 from allauth.account.views import SignupView
+||||||| ./todo/app_user/views_BASE_6387.py
+from .forms import SignUpForm
+=======
+from django.contrib.auth.forms import UserCreationForm
+from .forms import MySignUpForm
+from django.contrib.auth.models import User
+from allauth.account.views import SignupView
+>>>>>>> ./todo/app_user/views_REMOTE_6387.py
 
 
 def user_home_view(request):
@@ -75,7 +95,15 @@ class MySignUpView(CreateView):
 """
 class MySignUpView(SignupView):
     template_name = "app_user/signup_form.html"
+<<<<<<< ./todo/app_user/views_LOCAL_6387.py
     form_class = MySignUpForm
     success_url = reverse_lazy('user_login')
 """
 
+||||||| ./todo/app_user/views_BASE_6387.py
+    success_url = reverse_lazy('/')
+=======
+    form_class = MySignUpForm
+    success_url = reverse_lazy('user_login')
+"""
+>>>>>>> ./todo/app_user/views_REMOTE_6387.py

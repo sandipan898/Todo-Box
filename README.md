@@ -1,11 +1,23 @@
 # Todo-Box
-## Make your daily routine more organized. Transform yourself to beacome a more productive person.
-### We provides you a very organized Task Manager TODO-BOX to save your works of your daily routine.
-### Functionalities: 
-1. You can Add new tasks.
-2. Update your tasks.
-3. Delete your tasks.
-4. If your work is done you can 'Mark it as Done'.
-5. if it seems that the work is not done yet you can 'mark it as undone'.
 
-### Make your TODO-BOX use our powerful tools, take advantage of our hard work, and Be More Productive.
+## A full stack Web Application developed in django
+
+### here you can 
+1. Create your own account. 
+2. If you have one you can login.
+3. you can see your Dashboard where you can 
+   * See Previous Tasks
+   * Add New Tasks
+   * Delete Tasks 
+   * Update Existing Tasks
+   * Mark as Done
+   * Undone any Task.
+
+### Technology used for the frontend
+  1. HTML5
+  2. CSS3
+  3. JavaScript
+  4. Bootstrap 4
+  
+### Technology used for the backend
+  1. Django

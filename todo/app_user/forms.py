@@ -1,4 +1,10 @@
+<<<<<<< ./todo/app_user/forms_LOCAL_6387.py
 from django.contrib.auth.forms import UserCreationForm, UsernameField
+||||||| ./todo/app_user/forms_BASE_6387.py
+from django.contrib.auth.forms import UserCreationForm
+=======
+from django.contrib.auth.forms import UserCreationForm
+>>>>>>> ./todo/app_user/forms_REMOTE_6387.py
 from django import forms
 from django.contrib.auth.models import User, AbstractUser
 from django.contrib.auth import models
