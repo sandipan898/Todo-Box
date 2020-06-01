@@ -1,20 +1,8 @@
 from django.urls import path
-<<<<<<< ./todo/app_user/urls_LOCAL_6387.py
 from .views import signup_form, user_home_view, MySignUpView
-||||||| ./todo/app_user/urls_BASE_6387.py
-from .views import SignUpView, user_home_view
-=======
-from .views import signup_form, user_home_view, MySignUpView
->>>>>>> ./todo/app_user/urls_REMOTE_6387.py
 from django.contrib.auth.views import LoginView, LogoutView
-<<<<<<< ./todo/app_user/urls_LOCAL_6387.py
 from allauth.account.views import SignupView
 
-||||||| ./todo/app_user/urls_BASE_6387.py
-=======
-from allauth.account.views import SignupView
-
->>>>>>> ./todo/app_user/urls_REMOTE_6387.py
 
 urlpatterns = [
     path('home/', user_home_view, name='user_home'),

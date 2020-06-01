@@ -19,6 +19,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('todo_list.urls')),
-
-    path('/user/', include('app_user.urls')),
+    
+    path('user/', include('app_user.urls')),
 ]
