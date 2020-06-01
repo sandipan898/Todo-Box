@@ -84,7 +84,6 @@ class MySignUpView(SignupView):
     template_name = "app_user/signup_form.html"
     form_class = MySignUpForm
     success_url = reverse_lazy('user_login')
-"""
 
     form_class = MySignUpForm
     success_url = reverse_lazy('user_login')
