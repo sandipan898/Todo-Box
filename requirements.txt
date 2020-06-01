@@ -9,4 +9,6 @@ psycopg2
 pytz
 dj-database-url==0.5.0
 django-allauth==0.41.0
+importlib==1.0.4
+importlib-metadata==1.6.0
 
