@@ -1,14 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.urls import reverse_lazy, reverse
-from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
-from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView
-from django.contrib.auth.forms import UserCreationForm
-from .forms import MySignUpForm
-from django.contrib.auth.models import User
-from allauth.account.views import SignupView
 from django.contrib.auth.forms import UserCreationForm
 from .forms import MySignUpForm
 from django.contrib.auth.models import User
@@ -36,6 +29,7 @@ class MySignUpView(UserCreationForm):
 """   def get_success_url(self):
     return '/user/login'"""
 
+<<<<<<< HEAD
 """
 def signup_form(request):
     template_name = "app_user/signup_form.html"
@@ -56,6 +50,8 @@ def signup_form(request):
 """
 
 
+=======
+>>>>>>> b48a533f8d8ef8ace88feccd76b747ab6dd89f02
 def signup_form(request):
     template_name = "app_user/signup_form.html"
     context = {}
@@ -75,6 +71,7 @@ def signup_form(request):
 
 class MySignUpView(CreateView):
     form_class = MySignUpForm
+<<<<<<< HEAD
     template_name = "app_user/signup_form.html"
     success_url = reverse_lazy('user_login')
     
@@ -86,6 +83,15 @@ class MySignUpView(SignupView):
     success_url = reverse_lazy('user_login')
 """
 
+=======
+    template_name = "app_user/signup_form.html"
+    success_url = reverse_lazy('user_login')
+    
+
+"""
+class MySignUpView(SignupView):
+    template_name = "app_user/signup_form.html"
     form_class = MySignUpForm
     success_url = reverse_lazy('user_login')
 """
+>>>>>>> b48a533f8d8ef8ace88feccd76b747ab6dd89f02

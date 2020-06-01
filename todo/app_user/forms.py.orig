@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm, UsernameField
-from django.contrib.auth.forms import UserCreationForm
 from django import forms
+<<<<<<< HEAD
 from django.contrib.auth.models import User, AbstractUser
 from django.contrib.auth import models
 from allauth.account.forms import SignupForm
@@ -20,18 +20,28 @@ from django.contrib.auth.validators import UnicodeUsernameValidator
         return user
         """
 
+=======
+from django.contrib.auth.models import User
+
+
+>>>>>>> b48a533f8d8ef8ace88feccd76b747ab6dd89f02
 class MySignUpForm(UserCreationForm):
     email = forms.EmailField(label="Email",)
     first_name = forms.CharField(label="First name")
     last_name = forms.CharField(label="Last name")
+<<<<<<< HEAD
     
     #user_name = UsernameField()
+=======
+    user_name = forms.CharField(label="username")
+>>>>>>> b48a533f8d8ef8ace88feccd76b747ab6dd89f02
 
     class Meta:
         model = User
         fields = [
             "first_name",
             "last_name",
+<<<<<<< HEAD
             #"user_name",
             "email",
         ]
@@ -56,3 +66,8 @@ class MySignUpForm(UserCreationForm):
             "password2": forms.PasswordInput(attrs={'class': 'form-control'}),
         }
         """
+=======
+            "user_name"
+            "email",
+        ]
+>>>>>>> b48a533f8d8ef8ace88feccd76b747ab6dd89f02
