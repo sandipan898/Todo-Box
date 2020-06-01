@@ -1,0 +1,8 @@
+form.alert alert-block alert-danger {
+    font-size: 10px;
+}
+
+form.help-block{
+    color: #9d9e9e;
+    font-size: 7px;
+}

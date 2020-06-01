@@ -23,7 +23,7 @@
 						<small style="color: #9d9e9e">{{ field.help_text }}</small>
 					{% endif %}
 					{% for error in field.errors %}
-						<p class="danger">{{ error }}</p>
+						<p><small style="color: #f08b79">{{ error }}</small></p>
 					{% endfor %}
 				</p>
 			{% endfor %}

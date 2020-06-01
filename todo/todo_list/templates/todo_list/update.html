@@ -9,12 +9,20 @@
     </nav>
     </br>
     {% if object %}
-        <form class="form-inline my-2 my-lg-0" action="" method="POST">
-            {% csrf_token %}
-            <label for="formGroupExampleInput2" class="col-sm-1 col-form-label">Task</label>
-            <input class="form-control mr-sm-2" type="search" value="{{object.item}}" aria-label="Search" name="item">
-            <input type="hidden" value="{{ object.completed }}" name="completed">
-            <button class="btn btn-primary my-2 my-sm-0" type="submit">Edit Item</button>
-        </form>
+        <div class="container rounded-lg p-4 my-2 bg-dark text-white" style="width: 90%;">
+            <p class="h2" style="padding: 10px 39px;"><em>Update Task</em></p>
+            <form class="form-inline my-2 my-lg-0" action="" method="POST">
+                {% csrf_token %}
+                <label class="col-sm-1 col-form-label" style="font-size: 25px;">Task</label>
+                <input class="form-control mr-sm-2" type="search" value="{{object.item}}" aria-label="Search" name="item">
+                <input type="hidden" value="{{ object.completed }}" name="completed">
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">Update Item</button>
+            </form>
+        </div>
+    {% else %}
+        <div class="alert alert-warning alart-dismissable" align="center">
+            <p>There is nothing to Update.</p>
+            <p>Select a Task to Update</p>
+        </div> 
     {% endif %}
 {% endblock %}
