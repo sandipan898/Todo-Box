@@ -25,7 +25,7 @@ SECRET_KEY = 'q4qfsbvn$&(!uaet4z()y$sqw!)eb+sx)7_p_o)a)&9zcetku*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://todo-box.herokuapp.com']
+ALLOWED_HOSTS = ['todo-box.herokuapp.com']
 
 
 # Application definition
