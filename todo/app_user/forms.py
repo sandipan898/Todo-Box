@@ -38,7 +38,12 @@ class MySignUpForm(UserCreationForm):
     user_name = UsernameField(widget=forms.TextInput(attrs={
                     'class': 'form-control',
         }))
-
+    password1 = forms.PasswordInput(attrs={
+                    'class': 'form-control',
+        })
+    password2 = forms.PasswordInput(attrs={
+                    'class': 'form-control',
+        })
     class Meta:
         model = User
         fields = [
@@ -46,6 +51,8 @@ class MySignUpForm(UserCreationForm):
             "last_name",
             "user_name",
             "email",
+            "password1",
+            "password2"
         ]
     
         def clean_user_name(self):
