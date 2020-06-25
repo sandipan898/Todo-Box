@@ -21,38 +21,25 @@ from django.contrib.auth.validators import UnicodeUsernameValidator
         """
 
 class MySignUpForm(UserCreationForm):
-    email = forms.EmailField(label="Email",)
+    email = forms.EmailField(label="Email")
     first_name = forms.CharField(label="First name")
     last_name = forms.CharField(label="Last name")
     
-    #user_name = UsernameField()
+    user_name = UsernameField()
 
     class Meta:
         model = User
         fields = [
             "first_name",
             "last_name",
-            #"user_name",
+            "user_name",
             "email",
         ]
-
+    
         def clean_user_name(self):
             username = self.cleaned_data['username']
             if len(username) < 2:
                 raise forms.ValidationError("Username is too short")
-            """
             elif User.objects.get(username=username):
                 raise forms.ValidationError("This username is already taken")
-            """
             return username
-            
-        """
-        widgets = {
-            "first_name": forms.TextInput(attrs={'class': 'form-control'}),
-            "last_name": forms.TextInput(attrs={'class': 'form-control'}),
-            "username": forms.TextInput(attrs={'class': 'form-control'}),
-            #"email": forms.EmailField(attrs={'class': 'from-control'}),
-            "password1": forms.PasswordInput(attrs={'class': 'form-control'}),
-            "password2": forms.PasswordInput(attrs={'class': 'form-control'}),
-        }
-        """

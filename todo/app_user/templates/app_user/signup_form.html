@@ -14,7 +14,9 @@
 	<div class="container rounded-lg p-4 my-3 bg-dark text-white" align="center" style="width:500px;">
 		<form role="form" action="{% url 'user_signup' %}" method="POST">
 			{% csrf_token %}
-			<!--{{form| crispy}}-->
+
+			{% comment %}{{form | crispy}}{% endcomment %}
+
 			{% for field in form %}
 				<p style="padding-bottom:8px;">
 					{{ field.label_tag }}<br>

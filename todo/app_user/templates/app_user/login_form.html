@@ -13,7 +13,7 @@
 	<p class="h2" align='center'>Please enter correct username and password to Login</p>
 	<div class="container rounded-lg p-4 my-3 bg-dark text-white" align="center" style="width:800px;">
 		
-		<!--
+		{% comment %}
 			<form role="form" action="{% url 'user_login' %}" method="POST">
 			{% csrf_token %}
 			{% for field in form %}
@@ -28,12 +28,11 @@
 			 
 			<button type="submit" class="btn btn-primary active">Sign in</button>
 		</form>
-		-->
+		{% endcomment %}
 
 		<form role="form" action="{% url 'user_login' %}" method="POST">
 			{% csrf_token %}
 			{{form| crispy}}
-			<!--{{ form.as_p }}-->
 			<button type="submit" class="btn btn-lg btn-primary active">Sign in</button>
 		</form> 
 
