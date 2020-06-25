@@ -80,6 +80,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'todo.wsgi.application'
 
+ACCOUNT_FORMS = { 
+'signup': 'app_user.forms.MySignUpForm', 
+} 
+
+
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

@@ -1,12 +1,14 @@
 from django.contrib.auth.forms import UserCreationForm, UsernameField
-from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User, AbstractUser
 from django.contrib.auth import models
-from allauth.account.forms import SignupForm
-from django.core import validators
-from django.contrib.auth.password_validation import UserAttributeSimilarityValidator, MinimumLengthValidator
-from django.contrib.auth.validators import UnicodeUsernameValidator
+# from allauth.account.forms import SignupForm
+# from django.core import validators
+# from django.contrib.auth.password_validation import UserAttributeSimilarityValidator, MinimumLengthValidator
+# from django.contrib.auth.validators import UnicodeUsernameValidator
+
+from allauth.account.forms import SignupForm 
 
 
 """
@@ -21,11 +23,21 @@ from django.contrib.auth.validators import UnicodeUsernameValidator
         """
 
 class MySignUpForm(UserCreationForm):
-    email = forms.EmailField(label="Email")
-    first_name = forms.CharField(label="First name")
-    last_name = forms.CharField(label="Last name")
+    email = forms.EmailField(label="Email", widget=forms.TextInput(attrs={
+                    'class': 'form-control',
+        }))
+    first_name = forms.CharField(label="First name", max_length=100, 
+                widget=forms.TextInput(attrs={
+                    'class': 'form-control',
+        })
+    )
+    last_name = forms.CharField(label="Last name", max_length=100, widget=forms.TextInput(attrs={
+                    'class': 'form-control',
+        }))
     
-    user_name = UsernameField()
+    user_name = UsernameField(widget=forms.TextInput(attrs={
+                    'class': 'form-control',
+        }))
 
     class Meta:
         model = User
@@ -43,3 +55,7 @@ class MySignUpForm(UserCreationForm):
             elif User.objects.get(username=username):
                 raise forms.ValidationError("This username is already taken")
             return username
+
+# class MySignUpForm(SignupForm): 
+# 	first_name = forms.CharField(max_length=30, label='First Name',) 
+# 	last_name = forms.CharField(max_length=30, label='Last Name') 
