@@ -38,12 +38,14 @@ class MySignUpForm(UserCreationForm):
     user_name = UsernameField(widget=forms.TextInput(attrs={
                     'class': 'form-control',
         }))
-    password1 = forms.PasswordInput(attrs={
-                    'class': 'form-control',
-        })
-    password2 = forms.PasswordInput(attrs={
-                    'class': 'form-control',
-        })
+    password1 = forms.PasswordInput(
+                    #widget=forms.PasswordInput(attrs={
+                    #'class': 'form-control',
+        )
+    password2 = forms.PasswordInput(
+                    #widget=forms.PasswordInput(attrs={
+                    #'class': 'form-control',
+        )
     class Meta:
         model = User
         fields = [
