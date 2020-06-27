@@ -1,16 +1,10 @@
 from django.contrib.auth.forms import UserCreationForm, UsernameField
-# from django.contrib.auth.forms import UserCreationForm
 from django import forms
-from django.contrib.auth.models import User, AbstractUser
+from django.contrib.auth.models import User
 from django.contrib.auth import models
 from django.contrib.auth.password_validation import password_validators_help_text_html
-# from allauth.account.forms import SignupForm
-# from django.core import validators
-# from django.contrib.auth.password_validation import UserAttributeSimilarityValidator, MinimumLengthValidator
-# from django.contrib.auth.validators import UnicodeUsernameValidator
-
 from allauth.account.forms import SignupForm 
-
+from django.shortcuts import get_object_or_404
 
 """
     def save(self, commit=True):
@@ -39,7 +33,7 @@ class MySignUpForm(UserCreationForm):
                     #'style': 'width: 500px',
         }))
     
-    user_name = UsernameField(widget=forms.TextInput(attrs={
+    username = UsernameField(widget=forms.TextInput(attrs={
                     'class': 'form-control',
                     #'style': 'width: 500px',
         }))
@@ -61,17 +55,17 @@ class MySignUpForm(UserCreationForm):
         fields = [
             "first_name",
             "last_name",
-            "user_name",
+            "username",
             "email",
             "password1",
             "password2"
         ]
-    
-        def clean_user_name(self):
+        
+        def clean_username(self):
             username = self.cleaned_data['username']
             if len(username) < 2:
                 raise forms.ValidationError("Username is too short")
-            elif User.objects.get(username=username):
+            elif User.objects.get_object_or_404(username=username):
                 raise forms.ValidationError("This username is already taken")
             return username
 
