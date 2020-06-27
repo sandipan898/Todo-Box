@@ -11,7 +11,7 @@
 	</nav>
 	<br/>
 	<p class="h2" align='center'>Please fill the form below to create a new account</p><br><br>
-	<div class="container rounded-lg p-4 my-3 bg-dark text-white" align="center" style="width:80%;">
+	<div class="container card-body bg-dark text-white" align="center" style="width:80%;">
 		<p class="h3">Create Account</p>
 		<hr>
 		<form class="card-body" role="form" action="{% url 'user_signup' %}" method="POST">
@@ -22,9 +22,9 @@
 			{% for field in form %}
 				<span style="padding-bottom:8px">
 					{{ field.label_tag }}
-					<p>
+					<div class="form-group">
 						{{ field }}
-					</p>
+					</div>
 					{% if field.help_text %}
 						<small style="color: #9d9e9e">{{ field.help_text }}</small>
 					{% endif %}
