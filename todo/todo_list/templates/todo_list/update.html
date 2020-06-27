@@ -6,9 +6,9 @@
 
 {% block content %}
     {% include 'todo_list/nav_bar.html' %}
-    </div>
-    </nav>
-    </br>
+    <br>
+
+    <section>
     {% if object %}
         <div class="container rounded-lg p-4 my-2 bg-dark text-white" style="width: 90%;">
             <p class="h2" style="padding: 10px 39px;"><em>Update Task</em></p>
@@ -26,4 +26,5 @@
             <p>Select a Task to Update</p>
         </div> 
     {% endif %}
+</section>
 {% endblock %}
