@@ -7,7 +7,7 @@ Home
 {% block content %}
     {% include 'todo_list/nav_bar.html' %}
 
-    <br />
+    <br>
     {% if messages %}
         {% for msg in messages %}
             <div class="alert alert-warning alart-dismissable" role="alert">
@@ -45,7 +45,7 @@ Home
                 </tr>
                 {% for obj in objects %}
                 {% if obj.completed %}
-                <tr class="">
+                <tr>
                     <td class="striker"><a class="btn bbtn btn-secondary btn-block"
                             href="{% url 'update' obj.id%}">{{obj.item}}</a></td>
                     <td>
@@ -69,7 +69,7 @@ Home
                         </center>
                     </td>
                     <td>
-                        <center><a class="btn btn-primary btn-sm" href="{% url 'delete' obj.id %}">DELETE</a></center>
+                        <center><a id="del-btn" class="btn btn-primary btn-sm" href="{% url 'delete' obj.id %}">Delete</a></center>
                     </td>
                 </tr>
                 {% endif %}

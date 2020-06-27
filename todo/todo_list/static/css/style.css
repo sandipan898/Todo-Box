@@ -26,4 +26,10 @@ body{
         background-size: 730px;
         background-color: gray;
     }
+   td{
+        font-size: 12px;
+    }
+    th{ 
+        font-size: 13px;
+    }
 }
