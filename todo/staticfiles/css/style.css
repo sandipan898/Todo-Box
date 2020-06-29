@@ -1,0 +1,39 @@
+.striker{
+    text-decoration: line-through;
+}
+
+img {
+    color: grey;
+}
+
+body{
+    background-image: url(../images/todo_bg2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    background-color: #dfcf9edc;
+}
+
+@media (max-width: 767px) {
+    #sg-1, #lg-1{
+        padding-top: 100px;
+        color: #ffffff;
+    }
+    p, h1, h2, h3 {
+        color: #ffffff;
+    }
+    body{
+        background-image: url(../images/todo_bg2.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        background-size: 730px;
+        background-color: gray;
+    }
+    td{
+        font-size: 12px;
+    }
+    th{ 
+        font-size: 13px;
+    }
+}
