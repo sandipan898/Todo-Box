@@ -4,6 +4,22 @@
     Welcome
 {% endblock %}
 
+{% block extra_style %}
+    <style>
+        @media (max-width: 767px) {
+            .display-4 {
+                font-size: 40px;
+            }
+            h3, .h3, .h4 {
+                font-size: 20px;
+            }
+            p, a.btn {
+                font-size: 14px;
+            }
+        }
+    </style>    
+{% endblock %}
+
 {% block content %}
     {% include 'todo_list/nav_bar.html' %}
     <section>

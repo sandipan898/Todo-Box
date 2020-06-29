@@ -2,12 +2,16 @@
     text-decoration: line-through;
 }
 
+img {
+    color: grey;
+}
+
 body{
     background-image: url(../images/todo_bg2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
-    background-color: gray;
+    background-color: #dfcf9edc;
 }
 
 @media (max-width: 767px) {
@@ -26,7 +30,7 @@ body{
         background-size: 730px;
         background-color: gray;
     }
-   td{
+    td{
         font-size: 12px;
     }
     th{ 

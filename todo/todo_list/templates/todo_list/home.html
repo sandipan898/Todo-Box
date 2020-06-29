@@ -4,6 +4,19 @@
 Home
 {% endblock %}
 
+{% block extra_style %}
+<style>
+    @media (max-width: 767px) {
+        td center a.btn {
+            font-size: 11px;
+        }
+        td a.btn {
+            font-size: 13px;
+        }
+    }
+</style>
+{% endblock %}
+
 {% block content %}
     {% include 'todo_list/nav_bar.html' %}
 
@@ -46,8 +59,8 @@ Home
                 {% for obj in objects %}
                 {% if obj.completed %}
                 <tr>
-                    <td class="striker"><a class="btn bbtn btn-secondary btn-block"
-                            href="{% url 'update' obj.id%}">{{obj.item}}</a></td>
+                    <td class="striker"><a class="btn btn-secondary btn-block"
+                        href="{% url 'update' obj.id%}">{{obj.item}}</a></td>
                     <td>
                         <center>{{obj.time_added}}</center>
                     </td>
@@ -78,8 +91,8 @@ Home
 
             {% else %}
             <div class="alert alert-warning alart-dismissable" align="center">
-                <p>Your Todo-List is empty right now... </p>
-                <p>Hurry up and feel your Todo-Box with all of your works!</p>
+                <p style="color: black;">Your Todo-List is empty right now... </p>
+                <p style="color: black;">Hurry up and feel your Todo-Box with all of your works!</p>
             </div>
             {% endif %}
         </div>

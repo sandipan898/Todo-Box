@@ -4,6 +4,16 @@
     Update
 {% endblock %}
 
+{% block extra_style %}
+<style>
+    @media(max-width: 767px) {
+        p .h2 {
+            font-size: 20px;
+        }
+    }
+</style>
+{% endblock %}
+
 {% block content %}
     {% include 'todo_list/nav_bar.html' %}
     <br>
@@ -11,7 +21,7 @@
     <section>
     {% if object %}
         <div class="container rounded-lg p-4 my-2 bg-dark text-white" style="width: 90%;">
-            <p class="h2" style="padding: 10px 39px;"><em>Update Task</em></p>
+            <p class="h2 pl-3 pt-2"><em>Update Task</em></p>
             <form class="form-inline my-2 my-lg-0" action="" method="POST">
                 {% csrf_token %}
                 <label class="col-sm-1 col-form-label" style="font-size: 25px;">Task</label>
