@@ -7,11 +7,50 @@ img {
 }
 
 body{
-    background-image: url(../images/todo_bg2.jpg);
+    /* background-image: url(../images/todo_bg2.jpg); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
-    background-color: #dfcf9edc;
+    /* background-color: grey; */
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    
+    /* display: flex;
+    flex-direction: column; */
+}
+
+body::before {
+    content: "";
+    background-image: url(../images/todo_bg2.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.8;
+    background-color: grey;
+}
+
+footer{
+    min-height: 100%;
+    background-color:transparent;
+    display: flex;
+    flex-direction: column;
+    background-attachment: fixed;
+}
+p, h1, h2, h3 {
+    position: relative;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px #000000;
+}
+div {
+    position: relative;
 }
 
 @media (max-width: 767px) {
@@ -22,14 +61,14 @@ body{
     p, h1, h2, h3 {
         color: #ffffff;
     }
-    body{
+    /* body{
         background-image: url(../images/todo_bg2.jpg);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100%;
         background-size: 730px;
         background-color: gray;
-    }
+    } */
     td{
         font-size: 12px;
     }
