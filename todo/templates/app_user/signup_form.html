@@ -1,9 +1,13 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% block title %}
 	Signup
+{% endblock %}
+
+{% block extra_style %}
+<link rel="stylesheet" href="{% static 'form_style.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -11,10 +15,10 @@
 	<br/>
 	<section class="">
 	<p class="h2" id="sg-1" align='center'>Please fill the form below to create a new account</p><br><br>
-	<div class="container card-body bg-dark text-white" align="center" style="width:80%;">
+	<div class="container card-body bg-dark text-white form-style" align="center">
 		<p class="h3">Create Account</p>
 		<hr>
-		<form class="card-body" role="form" action="{% url 'user_signup' %}" method="POST">
+		<form class="form"  role="form" action="{% url 'user_signup' %}" method="POST">
 			{% csrf_token %}
 
 			{% comment %}{{form | crispy}}{% endcomment %}

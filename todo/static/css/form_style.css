@@ -10,3 +10,8 @@ form.help-block{
 /* form {
     padding: 0;
 } */
+
+form.form-style {
+    width:50% !important;
+}
+
