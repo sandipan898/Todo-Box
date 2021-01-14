@@ -24,19 +24,20 @@
 			{% comment %}{{form | crispy}}{% endcomment %}
 
 			{% for field in form %}
-				<span style="padding-bottom:8px">
-					{{ field.label_tag }}
-					<div class="form-group">
-						{{ field }}
-					</div>
+				<span style="padding-bottom:8px; display: flex; flex-direction: row;">
+					<span style="flex: 1;" class="m-2">{{ field.label_tag }}</span>
+					<span style="flex: 2;">{{ field }}</span>
+					<!-- <span>
 					{% if field.help_text %}
 						<small style="color: #9d9e9e">{{ field.help_text }}</small>
 					{% endif %}
-					{% for error in field.errors %}
-						<p><small style="color: #f08b79">{{ error }}</small></p>
-					{% endfor %}
-				</span>
+					</span> -->
+				</span>		
+				{% for error in field.errors %}
+					<small style="color: #f08b79">{{ error }}</small>
+				{% endfor %}
 			{% endfor %}
+			
 			<div class="pt-4">
 				<button type="submit" class="btn btn-primary active">Sign Up</button>
 			</div>

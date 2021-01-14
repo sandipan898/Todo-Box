@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView
+from django.views.generic import CreateView, FormView
 from django.contrib.auth.forms import UserCreationForm
 from .forms import MySignUpForm
 from django.contrib.auth.models import User
@@ -14,18 +14,18 @@ def user_home_view(request):
     return render(request, template_name, context)
 
 
-class MySignUpView(UserCreationForm):
-   form_class = MySignUpForm
-   template_name = "app_user/signup_form.html"
-   success_url = reverse_lazy('user_login')
+# class MySignUpView(UserCreationForm):
+#    form_class = MySignUpForm
+#    template_name = "app_user/signup_form.html"
+#    success_url = reverse_lazy('user_login')
    
-   def get(self, request, *args, **kwargs):
-        #GET method
-        form = MySignUpForm()
-        context = {'form': form}
-        return render(request, self.template_name, context)
+#    def get(self, request, *args, **kwargs):
+#         #GET method
+#         form = MySignUpForm()
+#         context = {'form': form}
+#         return render(request, self.template_name, context)
+#    #redirect_field_name = "user_login" 
 
-   #redirect_field_name = "user_login"
 """   def get_success_url(self):
     return '/user/login'"""
 
@@ -75,9 +75,6 @@ class MySignUpView(CreateView):
 """
 class MySignUpView(SignupView):
     template_name = "app_user/signup_form.html"
-    form_class = MySignUpForm
-    success_url = reverse_lazy('user_login')
-
     form_class = MySignUpForm
     success_url = reverse_lazy('user_login')
 """
