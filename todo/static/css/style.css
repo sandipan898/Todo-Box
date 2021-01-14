@@ -2,10 +2,6 @@
     text-decoration: line-through;
 }
 
-img {
-    color: grey;
-}
-
 body{
     /* background-image: url(../images/todo_bg2.jpg); */
     background-repeat: no-repeat;
@@ -14,8 +10,8 @@ body{
     /* background-color: grey; */
     background-position: center center;
     background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     background-size: cover;
     
     /* display: flex;
@@ -31,7 +27,7 @@ body::before {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.8;
+    opacity: 0.75;
     background-color: grey;
 }
 
